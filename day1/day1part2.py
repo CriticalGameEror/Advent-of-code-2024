@@ -2,10 +2,10 @@ import os
 
 dirname = os.path.dirname(__file__)
 filename = os.path.join(dirname, "input.txt")
-with open(filename) as f:
+with open(filename, encoding="utf-8") as f:
     input_text = f.readlines()
-    for x in range(len(input_text)):
-        input_text[x] = input_text[x].strip()
+    for index, item in enumerate(input_text):
+        input_text[index] = item.strip()
 
 left_list = []
 right_list = []
