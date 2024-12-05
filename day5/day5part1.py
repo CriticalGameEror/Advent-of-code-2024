@@ -19,7 +19,7 @@ for line in input_text:
     come_before[num1].add(num2)
     produced_page_index += 1
 
-working_lines = []
+total = 0
 for line in input_text[produced_page_index+1:]:
     number_list = line.split(",")
     list_broken = False
@@ -37,10 +37,6 @@ for line in input_text[produced_page_index+1:]:
                 list_broken = True
                 break
     if not list_broken:
-        working_lines.append(number_list)
-
-total = 0
-for line in working_lines:
-    position = int((len(line)/2)-0.5)
-    total += int(line[position])
+        position = int((len(number_list)/2)-0.5)
+        total += int(number_list[position])
 print(total)
